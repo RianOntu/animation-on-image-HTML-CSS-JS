@@ -1,0 +1,753 @@
+.menu{
+    border:none;
+    padding:10px;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  
+  }
+  .menu:hover{
+      cursor:pointer;
+      color: white;
+      background-color: #24BFF2;
+      transition: 0.5s;
+  }
+  .menu:focus{
+    outline: none;
+    color: white;
+    background-color: #24BFF2;
+  }
+  #app { height: 100% }
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+  
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  
+  
+  @media only screen and (min-width: 769px) {
+   
+  
+   
+  
+    /* .swiper-slide.swiper-slide-active:first-child {
+      transform: translateX(50%);
+      z-index: 2;
+    } */
+  
+   
+  
+    .swiper-slide:nth-child(2) {
+      transition: transform 100ms;
+    }
+  
+    /* .swiper-slide.swiper-slide-next:nth-child(2) {
+      transform: translateX(55%);
+      z-index: 1;
+    } */
+  
+    .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
+      transform: translateX(-50%);
+    }
+  
+    .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
+      transform: translateX(-55%);
+    }
+  }
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:18px;
+}
+.four{
+    grid-row:span 2;
+    
+}
+.four1{
+    height: 100%;
+}
+.eight{
+    grid-row:span 2;
+    grid-column: span 2;
+   
+}
+.eight1{
+    height: 100%;
+    width: 100%;
+}
+.sixteen{
+    grid-row:span 2;
+    
+}
+.sixteen1{
+    height: 100%;
+}
+img{
+    width: 340px;
+    height: 340px;
+    border-radius: 10px;
+}
+.container1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+
+.four1,
+.eight1,
+.sixteen1 {
+    flex: 1;
+}
+
+.four1 img,
+.eight1 img,
+.sixteen1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.7;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: 1.1s ease;
+  }
+  .container1:hover .overlay {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .SlideOver .overlay{
+    position: absolute;
+   
+    left: 0;
+    right: 0;
+    top:0;
+    background-color: black;
+    opacity: 0.7;
+    overflow: hidden;
+    bottom:100%;
+    width: 100%;
+    height: 0;
+    transition: 1.1s ease;
+  }
+  
+  .SlideOver:hover .overlay {
+    height: 100%;
+    bottom:0;
+    border-radius: 10px;
+  }
+ 
+ 
+
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+  h3{
+    margin-top: 50px;
+  }
+  h5{
+    margin-top:50px;
+  }
+  .icons{
+    margin-top: 50px;
+  }
+@media only screen and (max-width:576px){
+    .grid{
+       
+        grid-template-columns: repeat(1,1fr);
+       
+    }
+    img{
+       
+        height: 340px !important;;
+        border-radius: 10px;
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .eight{
+        width: 100%;
+        grid-row:auto;
+    grid-column:auto;
+    }
+  
+}
+@media only screen and (min-width:577px) and (max-width:992px){
+    .grid{
+       
+        grid-template-columns: repeat(2,1fr);
+       
+    }
+}
+.zoom-out-container {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  /* height:100%; */
+}
+
+.zoom-out-container img{
+  transform-origin: 50% 50%;
+  transition: all 1s;
+  
+ 
+
+  
+}
+
+.zoom-out-container:hover img{
+  
+  transform: scale(0.8);
+  
+  
+}
+
+  .zoom-in-container {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .zoom-in-container img{
+    transform-origin: 50% 50%;
+    transition: all 1s;
+  
+    
+  }
+  
+  .zoom-in-container:hover img{
+    
+    transform: scale(1.5);
+  }
+  
+  
+.Swipe {
+    position: relative;
+     /* Adjust the height as needed */
+  }
+  .Swipe .white_box{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity:0.3;
+    transform-origin: left bottom;
+    transform: rotate(-30deg) skewX(30deg);
+    background-color: white;
+    transition: width 1.1s, height 0.3s, transform 0.3s;
+  }
+  .Swipe:hover .white_box{
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    
+  }
+  
+
+.container1:hover {
+    
+    cursor: pointer;
+  }
+  .FlipOut{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+
+.FlipOut .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+   
+   
+  }
+  
+  .FlipOut:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .FlipOut:hover .overlay{
+    opacity: 1;
+  }
+  .FlipOut img{
+    opacity: 1;
+  }
+  .FlipOut:hover img{
+    opacity: 0;
+  }
+ 
+  
+  .FlipOut .flip-card-front, .FlipOut .overlay{
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .FlipOut .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .FlipOut .overlay {
+    background-color: #4C5057;
+    color: white;
+    transform: rotateY(180deg);
+    opacity: 0;
+    
+
+  }
+
+  /* @keyframes rotateY {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    75%  {top: 50px}
+    100% {top: 100px;}
+  } */
+  
+  .FlipIn{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+.FlipIn:hover img{
+    z-index:0;
+
+}
+
+.FlipIn .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    transform: rotateY(-180deg);
+    background-color: black;
+    opacity: 0;
+  }
+  
+  .FlipIn:hover .overlay {
+    transform: rotateY(0deg);
+    z-index:1;
+    opacity: 0.7;
+  }
+  
+  .FlipIn .flip-card-front, .FlipIn .overlay{
+    /* position: absolute; */
+    
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+ 
+  }
+  
+  .FlipForward{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.FlipForward .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.1s;
+    transform-style: preserve-3d;
+    
+  }
+  
+  .FlipForward:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .FlipForward .flip-card-front, .FlipForward .overlay{
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .FlipForward .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .FlipForward .overlay {
+    background-color: #4C5057;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .FlipBackward{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.FlipBackward .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.1s;
+    transform-style: preserve-3d;
+    
+  }
+  
+  .FlipBackward:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .FlipBackward .flip-card-front, .FlipBackward .overlay{
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .FlipBackward .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .FlipBackward .overlay {
+    background-color: #4C5057;
+    color: white;
+    transform: rotateY(-180deg);
+  }
+  .Flip{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.Flip .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .Flip:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .Flip .flip-card-front, .Flip .overlay{
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .Flip .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .Flip .overlay {
+    background-color: #4C5057;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .FadeOut:hover .overlay{
+    opacity:1!important;
+}
+
+.moon{
+    outline:none;
+    background-color: white;
+    border-radius: 50%;
+    width:40px;
+    height:40px;
+    border: none!important;
+}
+.moon:hover{
+    color:#24BFF2;
+}
+.moon:hover{
+    background-color: white;
+}
+.sun{
+    outline:none;
+    background-color: black;
+    border-radius: 50%;
+    width:40px;
+    height:40px;
+    color:white;
+}
+.sun:hover{
+    color:#24BFF2
+}
+.sun:hover{
+    background-color:black;
+}
+/* Define CSS variables for background colors */
+.dark-mode{
+    background-color: #1E1F20;
+}
+.dark_menu{
+    background-color: #111111;
+    color:white;
+}
+.dark_menu:hover{
+    color:white;
+    background-color:#24BFF2 ;
+}
+.dark_menu:focus{
+    color:white;
+    background-color:#24BFF2 ;
+}
+.Bubble .overlay{
+    position: absolute;
+  
+   top:0;
+    right:-10;
+    background-color: black;
+    opacity: 0.7;
+    overflow: hidden;
+    
+    width: 0;
+    height: 0;
+    transition: 1.1s ease;
+  }
+  
+  .Bubble:hover .overlay {
+    height: 100%;
+    width:100%;
+    bottom:0;
+   left: 0;
+   
+    border-radius: 10px;
+  }
+
+  .BounceOut .overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #4C5057;
+    opacity: 0.7;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+}
+.BounceOut img {
+   
+    transition: transform 0.1s;
+}
+
+/* Add the pulse animation on hover */
+.BounceOut:hover img {
+    animation: pulse 1.1s ;
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    60%{
+        transform: scale(1.03);
+    }
+    70%{
+        transform: scale(1.05);
+    }
+    80%{
+        transform: scale(1.03);
+    }
+    90%{
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.BounceIn .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.7;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: transform 0.1s;
+}
+
+/* Add the pulse animation on hover */
+.BounceIn:hover .overlay {
+    animation: pulse 1.1s infinite;
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.Blinds {
+    position: relative;
+    overflow: inherit;
+}
+
+.Blinds .overlay-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+}
+ 
+.Blinds .overlay-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 2s ease;
+    
+  }
+  
+  .Blinds:hover .overlay-container {
+    opacity: 1;
+  }
+  
+
+.overlay1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transform-origin: bottom;
+    transform: scaleY(0); /* Initially, set scaleY to 0 to hide the overlays */
+    transition: transform 0.3s;
+     /* Delayed animation to reveal the overlays */
+}
+
+.Blinds:hover .overlay1 {
+    animation: merge 0.5s forwards; /* Animation to merge the overlays on hover */
+  animation: reveal 0.5s 0.3s forwards;
+}
+
+
+
+@keyframes reveal {
+    to {
+        transform: scaleY(1); /* Expand the overlays from bottom to top */
+    }
+}
+
+@keyframes merge {
+    to {
+        transform: scaleY(0); /* Merge the overlays from top to bottom */
+    }
+}
+
+/* Define a CSS class for the shake animation */
+.Shake:hover img {
+  animation: shake 0.5s infinite; /* Use the "shake" animation for 0.5 seconds infinitely */
+}
+
+/* Define the keyframes for the "shake" animation */
+@keyframes shake {
+  0% { transform: translate(0, 0); } /* Initial position */
+  20% { transform: translate(-5px, 0); } /* Move left */
+  40% { transform: translate(5px, 0); } /* Move right */
+  60% { transform: translate(-5px, 0); } /* Move left again */
+  80% { transform: translate(5px, 0); } /* Move right again */
+  100% { transform: translate(0, 0); } /* Back to the initial position */
+}
+
+/* Define a CSS class for the hover animation */
+.Trans img {
+  transition: transform 0.2s ease; /* Add a smooth transition effect */
+}
+
+/* Apply the hover animation on hover */
+.Trans:hover img {
+  transform: translateX(10px); /* Adjust the translation value as needed */
+}
+
+  
